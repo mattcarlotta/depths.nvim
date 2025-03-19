@@ -39,7 +39,7 @@ function M.setup()
         -- Editor
         Normal = { fg = colors.fg, bg = colors.black },
         NormalFloat = { bg = colors.bg },
-        FloatBorder = { fg = colors.blue },
+        FloatBorder = { fg = colors.blue, bg = colors.bg },
         FloatTitle = { fg = colors.fg },
         ColorColumn = { bg = colors.line },
         Cursor = { fg = colors.bg, bg = colors.fg },
