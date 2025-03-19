@@ -38,7 +38,7 @@ function M.setup()
     local highlights = {
         -- Editor
         Normal = { fg = colors.fg, bg = colors.black },
-        NormalFloat = { bg = colors.bg_dark },
+        NormalFloat = { bg = colors.bg },
         FloatBorder = { fg = colors.blue },
         FloatTitle = { fg = colors.fg },
         ColorColumn = { bg = colors.line },
