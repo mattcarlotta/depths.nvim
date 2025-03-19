@@ -37,8 +37,8 @@ function M.setup()
     -- Define highlight groups
     local highlights = {
         -- Editor
-        Normal = { fg = colors.fg, bg = colors.bg },
-        NormalFloat = { bg = colors.bg },
+        Normal = { fg = colors.fg, bg = colors.black },
+        NormalFloat = { bg = colors.black },
         FloatBorder = { fg = colors.comment },
         FloatTitle = { fg = colors.fg },
         ColorColumn = { bg = colors.line },
