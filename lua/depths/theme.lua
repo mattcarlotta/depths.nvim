@@ -303,6 +303,9 @@ function M.setup()
         DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan },
         LspInlayHint = { fg = colors.lsp_inlay_hint },
         LspSignatureActiveParameter = { italic = true },
+        LspReferenceText = { underline = false },
+        LspReferenceRead = { underline = false },
+        LspReferenceWrite = { underline = false },
 
         -- NvimTree
         NvimTreeGitDirty = { fg = colors.accent },
