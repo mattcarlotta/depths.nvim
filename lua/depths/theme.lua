@@ -94,7 +94,7 @@ function M.setup()
         Structure = { fg = colors.special },
         Special = { fg = colors.accent },
         Delimiter = { fg = colors.special },
-        Underlined = { sp = colors.tag, underline = false },
+        Underlined = { sp = colors.tag, underline = true },
         Ignore = { fg = colors.fg },
         Error = { fg = colors.white, bg = colors.error },
         Todo = { fg = colors.markup },
@@ -323,14 +323,16 @@ function M.setup()
         IndentBlanklineChar = { fg = colors.guide_normal },
         IndentBlanklineContextChar = { fg = colors.comment },
 
-        -- Neogit
-        NeogitBranch = { fg = colors.blue },
-        NeogitRemote = { fg = colors.purple },
-        NeogitDiffContextHighlight = { bg = colors.line },
-        NeogitHunkHeader = { fg = colors.tag },
-        NeogitHunkHeaderHighlight = { fg = colors.tag, bg = colors.line },
-        NeogitDiffAddHighlight = { bg = colors.vcs_added_bg },
-        NeogitDiffDeleteHighlight = { bg = colors.vcs_removed_bg },
+        markdownHeadingDelimiter = { fg = colors.orange, bold = true },
+        markdownCode = { fg = colors.blue },
+        markdownCodeBlock = { fg = colors.bg_dark },
+        markdownLinkText = { sp = colors.tag, underline = true },
+        markdownH1 = { link = "@markdown.heading" },
+        markdownH2 = { link = "@markdown.heading" },
+        markdownH3 = { link = "@markdown.heading" },
+        markdownH4 = { link = "@markdown.heading" },
+        markdownH5 = { link = "@markdown.heading" },
+        markdownH6 = { link = "@markdown.heading" },
 
         -- Mini.nvim
         MiniFilesTitleFocused = { fg = colors.fg, bold = true },
@@ -376,6 +378,15 @@ function M.setup()
         MiniTestFail = { fg = colors.error, bold = true },
         MiniTestPass = { fg = colors.string, bold = true },
         MiniTrailspace = { bg = colors.vcs_removed },
+
+        -- Neogit
+        NeogitBranch = { fg = colors.blue },
+        NeogitRemote = { fg = colors.purple },
+        NeogitDiffContextHighlight = { bg = colors.line },
+        NeogitHunkHeader = { fg = colors.tag },
+        NeogitHunkHeaderHighlight = { fg = colors.tag, bg = colors.line },
+        NeogitDiffAddHighlight = { bg = colors.vcs_added_bg },
+        NeogitDiffDeleteHighlight = { bg = colors.vcs_removed_bg },
 
         -- Notify
         NotifyERROR = { fg = colors.vcs_removed },
