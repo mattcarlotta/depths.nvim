@@ -23,7 +23,8 @@ return {
     gutter_normal = "#454B55",
     gutter_active = "#626975",
 
-    line = "#383E49",
+    -- line = "#383E49",
+    line = "#0E3B5E",
 
     vcs_added = "#7FD962",
     vcs_added_bg = "#1D2214",
