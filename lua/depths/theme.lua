@@ -94,7 +94,7 @@ function M.setup()
         Structure = { fg = colors.special },
         Special = { fg = colors.accent },
         Delimiter = { fg = colors.special },
-        Underlined = { sp = colors.tag, underline = true },
+        Underlined = { sp = colors.tag, underline = false },
         Ignore = { fg = colors.fg },
         Error = { fg = colors.white, bg = colors.error },
         Todo = { fg = colors.markup },
