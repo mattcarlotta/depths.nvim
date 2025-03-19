@@ -2,18 +2,7 @@ local colors = require("depths.colors")
 
 local M = {}
 
-function M.setup()
-    -- Clear existing highlights
-    vim.api.nvim_command("hi clear")
-    if vim.fn.exists("syntax_on") then
-        vim.api.nvim_command("syntax reset")
-    end
-
-    -- Set colorscheme name
-    vim.o.termguicolors = true
-    vim.g.colors_name = "depths"
-
-    -- Set terminal colors
+local function set_term_colors()
     vim.g.terminal_color_0 = colors.black
     vim.g.terminal_color_1 = colors.markup
     vim.g.terminal_color_2 = colors.string
@@ -33,9 +22,10 @@ function M.setup()
 
     vim.g.terminal_color_background = colors.black
     vim.g.terminal_color_foreground = colors.fg
+end
 
-    -- Define highlight groups
-    local highlights = {
+local function set_groups()
+    local groups = {
         -- Editor
         Normal = { fg = colors.fg, bg = colors.black },
         NormalFloat = { bg = colors.bg },
@@ -427,54 +417,31 @@ function M.setup()
     }
 
     -- Apply highlights
-    for group, ops in pairs(highlights) do
+    for group, ops in pairs(groups) do
         vim.api.nvim_set_hl(0, group, ops)
     end
 end
 
--- Lualine theme configuration
-function M.lualine()
-    return {
-        normal = {
-            a = { bg = colors.blue, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        insert = {
-            a = { bg = colors.green, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        visual = {
-            a = { bg = colors.purple, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        replace = {
-            a = { bg = colors.red, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        command = {
-            a = { bg = colors.yellow, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        terminal = {
-            a = { bg = colors.cyan, fg = colors.bg, bold = true },
-            b = { bg = colors.panel_bg, fg = colors.fg },
-            c = { bg = colors.bg, fg = colors.fg_idle },
-        },
-        inactive = {
-            a = { bg = colors.bg_dark, fg = colors.fg_idle },
-            b = { bg = colors.bg_dark, fg = colors.fg_idle },
-            c = { bg = colors.bg_dark, fg = colors.fg_idle },
-        },
-    }
+function M.setup()
+    if vim.version().minor < 8 then
+        vim.notify(
+            "Neovim 0.8+ is required for depths colorscheme",
+            vim.log.levels.ERROR,
+            { title = "depths colorscheme" }
+        )
+        return
+    end
+
+    vim.api.nvim_command("hi clear")
+    if vim.fn.exists("syntax_on") then
+        vim.api.nvim_command("syntax reset")
+    end
+
+    vim.o.termguicolors = true
+    vim.g.colors_name = "depths"
+
+    set_term_colors()
+    set_groups()
 end
 
--- Command function
-function M.colorscheme() vim.cmd("colorscheme depths") end
-
--- Return the module
 return M
