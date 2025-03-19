@@ -38,8 +38,8 @@ function M.setup()
     local highlights = {
         -- Editor
         Normal = { fg = colors.fg, bg = colors.black },
-        NormalFloat = { bg = colors.black },
-        FloatBorder = { fg = colors.comment },
+        NormalFloat = { bg = colors.bg_dark },
+        FloatBorder = { fg = colors.blue },
         FloatTitle = { fg = colors.fg },
         ColorColumn = { bg = colors.line },
         Cursor = { fg = colors.bg, bg = colors.fg },
