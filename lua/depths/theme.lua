@@ -388,9 +388,9 @@ local function set_groups()
         NotifyDEBUG = { fg = colors.comment },
         NotifyTRACE = { fg = colors.vcs_modified },
         NotifyERRORTitle = { fg = colors.error },
-        NotifyWARNTitle = { fg = colors.warning },
+        NotifyWARNTitle = { fg = colors.yellow },
         NotifyINFOTitle = { fg = colors.string },
-        NotifyDEBUGTitle = { fg = colors.ui },
+        NotifyDEBUGTitle = { fg = colors.comment },
         NotifyTRACETitle = { fg = colors.entity },
 
         -- Telescope
